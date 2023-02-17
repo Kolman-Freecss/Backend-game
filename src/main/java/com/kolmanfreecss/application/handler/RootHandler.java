@@ -7,11 +7,15 @@ import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RootHandler implements HttpHandler {
-    
-    private ConcurrentHashMap<String, HttpHandler> handlers;
-    
-    public RootHandler(ConcurrentHashMap<String, HttpHandler> handlers) {
-        this.handlers = handlers;
+
+    private static final ConcurrentHashMap<String, HttpHandler> handlers;
+
+    static {
+        // Initialize handlers
+        handlers = new ConcurrentHashMap<>();
+        handlers.put("login", new LoginHandler());
+        handlers.put("score", new ScoreHandler());
+        handlers.put("highscorelist", new ScoreHandler());
     }
 
     @Override
@@ -29,10 +33,10 @@ public class RootHandler implements HttpHandler {
             exchange.sendResponseHeaders(404, -1);
         }
     }
-    
+
     private String getPathHandler(String requestURI) {
         String[] path = requestURI.split("/");
         return path[path.length - 1];
     }
-    
+
 }

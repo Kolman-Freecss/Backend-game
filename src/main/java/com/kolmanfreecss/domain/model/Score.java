@@ -1,5 +1,7 @@
 package com.kolmanfreecss.domain.model;
 
+import java.util.Objects;
+
 public class Score implements Comparable<Score> {
 
     long id;
@@ -35,7 +37,7 @@ public class Score implements Comparable<Score> {
 
     @Override
     public int compareTo(Score o) {
-        return Long.compare(value, o.value);
+        return Long.compare(value, o.value) * -1;
     }
 
     @Override
@@ -46,4 +48,9 @@ public class Score implements Comparable<Score> {
         return id == score.id && levelId == score.levelId && userId == score.userId && value == score.value;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, levelId, userId, value);
+    }
+    
 }

@@ -6,7 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class ScoreRepository {
-    
+
     private static final Set<Score> scores = new LinkedHashSet<Score>() {
         @Override
         public boolean add(Score score) {
@@ -22,14 +22,14 @@ public class ScoreRepository {
             return super.add(score);
         }
     };
-    
+
     public void addScore(Score score) {
         scores.add(score);
     }
-    
+
     /**
      * Obtains the next id for a new score. (Max id + 1)
-     * */
+     */
     public long getNextId() {
         long nextId = 0;
         for (Score score : scores) {
@@ -39,10 +39,10 @@ public class ScoreRepository {
         }
         return nextId + 1;
     }
-    
+
     /**
      * Obtains the scores of a level ordered by value (descending) with max 15 scores.
-     * */
+     */
     public Set<Score> getScoresByLevelId(long levelId) {
         Set<Score> scoresByLevelId = new LinkedHashSet<>();
         int i = 0;
@@ -57,5 +57,5 @@ public class ScoreRepository {
         }
         return scoresByLevelId;
     }
-    
+
 }

@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class ScoreHandler implements HttpHandler {
 
     Logger logger = Logger.getLogger(ScoreHandler.class.getName());
-    
+
     private final ScoreService scoreService;
     private final LoginService loginService;
 
@@ -65,7 +65,7 @@ public class ScoreHandler implements HttpHandler {
 
     private void handlePost(HttpExchange exchange) throws IOException, HttpWrapperException {
         String[] path = exchange.getRequestURI().toString().split("/");
-        if (path.length == 3 || path[2].startsWith("score")) {
+        if (path.length == 3 && path[2].startsWith("score")) {
             postScore(exchange);
         } else {
             throw new HttpWrapperException(404, "Not found");
