@@ -1,7 +1,7 @@
 package com.kolmanfreecss.application;
 
 import com.kolmanfreecss.application.service.LoginService;
-import com.kolmanfreecss.domain.exception.HttpLoginException;
+import com.kolmanfreecss.domain.exception.HttpWrapperException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,7 @@ class LoginServiceUnitTest {
     }
     
     @Test
-    void login() throws HttpLoginException {
+    void login() throws HttpWrapperException {
         System.out.println("TEST LoginServiceUnitTest: Login");
         Mockito.when(loginService.login("kolman-freecss", "warcraft")).thenReturn(1L);
         long sessionId = loginService.login("kolman-freecss", "warcraft");

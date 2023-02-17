@@ -1,6 +1,6 @@
 package com.kolmanfreecss.application.service;
 
-import com.kolmanfreecss.domain.exception.HttpLoginException;
+import com.kolmanfreecss.domain.exception.HttpWrapperException;
 
 import java.util.Random;
 import java.util.UUID;
@@ -16,17 +16,12 @@ public class LoginService {
     /**
      * Login the user and return true if the login was successful.
      */
-    public long login(String username, String password) throws HttpLoginException {
-
-        if (username == null || password == null
-                || username.isEmpty() || password.isEmpty()) {
-            return 0;
-        }
+    public long login(long userId) throws HttpWrapperException {
 
         // TODO: Check username and password against database
-        if (!username.equals("kolmanfreecss") || !password.equals("warcraft")) {
-            throw new HttpLoginException(400, "Invalid username or password");
-        }
+//        if (userId != 4711L) {
+//            throw new HttpLoginException(400, "Invalid userId");
+//        }
 
         // TODO: Here we could and should encrypt the session id with a private key 
         long sessionId = UUID.randomUUID().getMostSignificantBits();
