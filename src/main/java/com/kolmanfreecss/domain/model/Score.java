@@ -1,14 +1,12 @@
 package com.kolmanfreecss.domain.model;
 
-import java.util.Objects;
-
 public class Score implements Comparable<Score> {
 
     long id;
     long levelId;
     long userId;
     long value;
-    
+
     public Score() {
     }
 
@@ -23,32 +21,16 @@ public class Score implements Comparable<Score> {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public long getLevelId() {
         return levelId;
-    }
-
-    public void setLevelId(long levelId) {
-        this.levelId = levelId;
     }
 
     public long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
     public long getValue() {
         return value;
-    }
-
-    public void setValue(long value) {
-        this.value = value;
     }
 
     @Override
@@ -63,5 +45,5 @@ public class Score implements Comparable<Score> {
         Score score = (Score) o;
         return id == score.id && levelId == score.levelId && userId == score.userId && value == score.value;
     }
-    
+
 }
