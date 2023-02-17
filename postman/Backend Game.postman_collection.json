@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "5c432321-6e91-4ff6-ade1-1638be2d7ce7",
+		"name": "Backend Game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5372028"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/7/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"7",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post score",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/5/score?sessionkey=MzM2MzMzNTI0MDAzNjE0MDA2OS45LndhcmNyYWZ0X3NlY3JldF9iYXNlNjQ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"5",
+						"score"
+					],
+					"query": [
+						{
+							"key": "sessionkey",
+							"value": "MzM2MzMzNTI0MDAzNjE0MDA2OS45LndhcmNyYWZ0X3NlY3JldF9iYXNlNjQ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get high score list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": \"15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/5/highscorelist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"5",
+						"highscorelist"
+					],
+					"query": [
+						{
+							"key": "sessionkey",
+							"value": "3aXbznaDCKZTjpDy9HuGOpGhCQcgs2trh8q2oO3taC9AxaUZR+ws1wZF0/qU1jljgoP4U9jpJg+dEp4kNvV+dRv37H4=",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

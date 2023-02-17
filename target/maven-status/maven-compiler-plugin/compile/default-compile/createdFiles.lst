@@ -1,6 +1,0 @@
-com\kolmanfreecss\Main.class
-com\kolmanfreecss\domain\model\dto\UserDto.class
-com\kolmanfreecss\domain\model\User.class
-com\kolmanfreecss\application\controller\LoginController.class
-com\kolmanfreecss\domain\exception\HttpLoginException.class
-com\kolmanfreecss\application\service\LoginService.class
